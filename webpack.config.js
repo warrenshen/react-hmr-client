@@ -1,10 +1,26 @@
 var path = require('path');
 var webpack = require('webpack');
 
+const BABEL_QUERY = {
+  presets: ['react', 'es2015'],
+  plugins: [
+    [
+      'react-transform',
+      {
+        transforms: [
+          {
+            imports: ['react'],
+            locals: ['module'],
+            transform: 'react-transform-hmr'
+          }
+        ]
+      }
+    ]
+  ]
+};
+
 module.exports = {
-  entry:  [
-    'webpack-dev-server/client?http://localhost:8080/',
-    'webpack/hot/only-dev-server',
+  entry: [
     './client'
   ],
   output: {
@@ -13,13 +29,14 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js'],
-    modulesDirectories: ['client']
+    modulesDirectories: ['node_modules', 'shared']
   },
   module: {
     loaders: [
       {
         exclude: /node_modules/,
-        loaders: ['react-hot', 'babel'],
+        loader: 'babel',
+        query: BABEL_QUERY,
         test: /\.js?$/
       }
     ]
