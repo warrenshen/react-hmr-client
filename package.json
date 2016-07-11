@@ -1,7 +1,7 @@
 {
   "name": "react-redux-client",
   "version": "1.0.0",
-  "repository": "https://github.com/warrenshen/react-redux-client.git",
+  "repository": "https://github.com/warrenshen/react-hmr-client.git",
   "description": "An example client server with express, react-router, and redux.",
   "main": "application.js",
   "scripts": {

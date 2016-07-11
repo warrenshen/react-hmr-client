@@ -1,6 +1,6 @@
-## React Client Boilerplate
+## React HMR Client Boilerplate
 
-Boilerplate for an express powered React client app with Hot Module Replacement.
+Boilerplate for a React client app with Hot Module Replacement.
 
 ```
 $ npm install
