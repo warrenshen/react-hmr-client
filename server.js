@@ -6,6 +6,9 @@ import path from 'path';
 import routes from 'routes';
 
 const server = express();
+if (process.env.NODE_ENV !== 'production') {
+  require('./webpack.dev.config').default(server);
+}
 
 server.use(express.static(path.join(__dirname, 'dist')));
 server.use((req, res) => {

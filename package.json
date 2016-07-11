@@ -5,7 +5,7 @@
   "description": "An example client server with express, react-router, and redux.",
   "main": "application.js",
   "scripts": {
-    "build": "webpack --color --config webpack.config.js --progress",
+    "build": "webpack -p --color --config webpack.prod.config.js --progress",
     "develop": "NODE_PATH=$NODE_PATH:./shared node --harmony ."
   },
   "author": "Warren Shen",
