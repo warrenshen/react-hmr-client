@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
+  context: __dirname,
   entry: [
     './client'
   ],
@@ -19,10 +20,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: '/'
   },
-  resolve: {
-    extensions: ['', '.js'],
-    modulesDirectories: ['node_modules', 'shared']
-  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -34,5 +31,9 @@ module.exports = {
         warnings: false
       }
     })
-  ]
+  ],
+  resolve: {
+    extensions: ['', '.js'],
+    modulesDirectories: ['node_modules', 'shared']
+  }
 };
